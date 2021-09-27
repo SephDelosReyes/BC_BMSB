@@ -4,9 +4,14 @@
 //@version=4
 
 study("Benjamin Cowen's Bull Market Support Band", overlay=true)
+n20 = (timeframe.isweekly) ? 20 : 
+     (timeframe.isdaily) ? 140 : 0
     
-sma_20w = sma(close, 20)
-ema_21w = ema(close, 21)
+n21 = (timeframe.isweekly) ? 21 : 
+     (timeframe.isdaily) ? 147 : 0
+
+sma_20w = sma(close, n20)
+ema_21w = ema(close, n21)
 
 p1 = plot(sma_20w, color=color.red, title="sma_20w", linewidth=2)
 p2 = plot(ema_21w, color=color.green, title="ema_21w", linewidth=2)
