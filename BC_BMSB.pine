@@ -1,0 +1,13 @@
+// This source code is subject to the terms of the Mozilla Public License 2.0 at https://mozilla.org/MPL/2.0/
+// © jacdelosreyes013
+
+//@version=4
+
+study("Benjamin Cowen's Bull Market Support Band", overlay=true)
+    
+sma_20w = sma(close, 20)
+ema_21w = ema(close, 21)
+
+p1 = plot(sma_20w, color=color.red, title="sma_20w", linewidth=2)
+p2 = plot(ema_21w, color=color.green, title="ema_21w", linewidth=2)
+fill(p1, p2, color.yellow, 75)
